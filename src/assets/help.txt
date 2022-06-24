@@ -1,0 +1,20 @@
+R"(Muscle Decomposition Test.
+
+    Usage:
+      MuscleDecompositionTest <muscle> [-n <num-of-fibres>] [-r <resolution>] [-f <output>] [-x] [-v <vis-mode>] -o <origin>... -i <insertion>...
+      MuscleDecompositionTest (-h | --help)
+      MuscleDecompositionTest --version
+
+    Options:
+	  -o <origin>         Input file with the origin atachment area points.
+	  -i <insertion>      Input file with the insertion atachment area points.
+	  -n <num-of-fibres>  Number of the fibres to produce [default: 10].
+	  -r <resolution>     Resolution of the produced fibres [default: 15].		
+	  -f <output>         Output file with the produced fibres.
+	  -v <vis-mode>       Visualization: 0 - none, 1 - output, 2 - debug  [default: 1]	  
+      -h --help     Show this help.
+      --version     Show version. 		
+)";
+
+MuscleDecompositionTest.exe "mAMEM_new volume.stl" -i "mAMEM_new insertion.vtk" -o "mAMEM_new origin.vtk" -f "mAMEM_new.vtk"
+MuscleDecompositionTest.exe "DM volume.stl" -i "DM insertion.vtk" -o "DM origin.vtk" -f "DM.vtk"
