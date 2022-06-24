@@ -1,5 +1,4 @@
 ### General libraries ###
-# import pip # NOT NEEDED FOR THIS VERSION
 
 ### Blender libraries ###
 import bpy
@@ -11,12 +10,6 @@ Add-on properties
 '''
 
 _classes = []
-
-# _modules = ["debugpy"]
-# '''
-# Add-on essential modules
-# '''
-
 
 bl_info = {
  "name": "MyoGenerator Exporter",
@@ -103,35 +96,6 @@ def unregister():
     
     for prop in _props:
         del prop
-
-
-# NOT NEEDED FOR THIS VERSION
-# '''
-# Installing all dependent modules
-# '''
-# def install_modules():
-#     # try:
-#     #     # Version 2.92 and older
-#     #     python_path = bpy.app.binary_path_python
-#     # except AttributeError:
-#     #     # Version 2.93 and later
-#     #     python_path = sys.executable
-    
-#     for module in _modules:
-#     #     cmd = [
-#     #         os.path.abspath(python_path),
-#     #         "-m" 
-#     #         "pip",
-#     #         "install",
-#     #         module,
-#     #     ]
-#     #     result = subprocess.run(cmd, stdout=subprocess.PIPE)
-#     #     print(result.stdout.decode("utf-8"))
-#         result = pip.main(["install", module])
-#         if(result == 1):
-#             print("ERROR! Module \"" + module + "\" have not been found for this version of Python!")
-            
-
 
 if __name__ == "__main__":
     register()

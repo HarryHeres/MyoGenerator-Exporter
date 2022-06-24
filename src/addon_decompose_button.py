@@ -121,19 +121,7 @@ class DecomposeButton(Operator):
                 message = strings["Message_file_not_found"] + "(File: " + decomposed + ")"
                 SimplePopup.showPopup(self, message, "ERROR", "ERROR")
                 return {"CANCELLED"}
-
-            # NOTE: Apply all linear transformations to match the volume model - DEPRECATED
-            # try:
-            #     volume = bpy.data.objects[muscle_name + ExportButton.type_delimiter + "volume"]
-            #     imported = bpy.data.objects[muscle_name + ExportButton.type_delimiter + "converted"]
-
-            #     imported.location = volume.location
-            #     imported.rotation_euler = volume.rotation_euler
-            #     imported.scale = volume.scale
-            # except KeyError:
-            #     SimplePopup.showPopup(self, strings["Message_muscle_not_found"], "WARNING", "TRIA_UP")
-
-        # SimplePopup.showPopup(self, strings["Message_decomposing_done"], "Success", "INFO")    
+                
         return {"FINISHED"}
    
 
