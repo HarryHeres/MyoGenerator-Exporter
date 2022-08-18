@@ -28,7 +28,7 @@ A proper muscle model could have following hierarchy (in the scene):
 # Add-on's quick 
 The add-on's GUI is fairly simple:
 
-<p text-align="center"> <img src="./src/docs/GitHub/Blender-addon-gui-final.png"> </p> 
+<p text-align="center"> <img align="center" src="./src/docs/GitHub/Blender-addon-gui-final.png"> </p> 
 
 ## Output directory
 This parameter is used for selecting a work folder. 
@@ -36,7 +36,7 @@ Export and decomposition functionallities are working with **this** directory.
 
 ## Muscle name (decomposition)
 This parameter serves **only** for the singular decomposition process (Decompose specified muscle(s)).
-After pressing this button, the add-on searches for the [essential]() files in the current working directory (specified by [Output directory](#output-directory))
+After pressing this button, the add-on searches for the [essential](#model-hierarchy) files in the current working directory (specified by [Output directory](#output-directory))
 
 ## Decomposition parameters
 For the decomposition process, following parameters can be set, which implicate the model's structure:
@@ -88,4 +88,12 @@ During using the add-on, you might run into a few warnings/errors. Below, there'
 
 - *File was not found! Please, check the filename and directory. (File: ...)*: This error mostly happens, when a user chose a [working directory](#output-directory), but the file is not present. These pop-ups should always contain a path to the file, which was not found, so make sure to check if the path is right and if the file is in the correct folder.
 
-- *No muscles to export found in the specified directory*:
+- *No muscles to decompose found in the specified directory*: [Current working directory](#output-directory) is most likely empty. Make sure, you're in the right tdirectory. If it is not empty, make sure you're following the [naming conventions](#model-hierarchy)
+
+- *MuscleDecomposition executable has not been found ...*: For decomposition, there's an essential tool in the add-on's source files. Open your file explorer and navigate to your Blender's add-on's folder (default: %appdata%\Blender Foundation\Blender\<version>\scripts\addons\Myogenerator\_Exporter\Assets). In this folder, there should be a file named **MuscleDecompositionTest** (*.exe* for Windows platform). Most likely, it is missing. This issue should be easily fixable by reinstalling the add-on, or download the executable from the source files (Windows only build) and copy it into the mentioned folder.
+
+  > If you're using Linux, you will need to head to [this link](https://gitlab.com/besoft/muscle-wrapping-2.0) and build a MuscleDecompositionTest executable for your concrete platform and distribution.
+
+- *Decomposition has been aborted due to the following reason:*: Something went wrong during the decomposition process. Try to decompose a muscle with **visualization mode = 2**, screenshot the console output and open an issue on the [GitHub repository](https://github.com/HarryHeres/MyoGenerator-Exporter).
+
+If you have run into other errors, please feel free to open an issue on the official [GitHub repository](https://github.com/HarryHeres/MyoGenerator-Exporter) :-).
