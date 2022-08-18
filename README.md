@@ -25,10 +25,10 @@ A proper muscle model could have following hierarchy (in the scene):
 
 *The name of the muscle model in this case is mAMEM_new*
 
-# Add-on GUI description
+# Add-on's quick 
 The add-on's GUI is fairly simple:
 
-![](./src/docs/GitHub/Blender-addon-gui-final.png) 
+<p text-align="center"> <img src="./src/docs/GitHub/Blender-addon-gui-final.png"> </p> 
 
 ## Output directory
 This parameter is used for selecting a work folder. 
@@ -37,6 +37,12 @@ Export and decomposition functionallities are working with **this** directory.
 ## Muscle name (decomposition)
 This parameter serves **only** for the singular decomposition process (Decompose specified muscle(s)).
 After pressing this button, the add-on searches for the [essential]() files in the current working directory (specified by [Output directory](#output-directory))
+
+## Decomposition parameters
+For the decomposition process, following parameters can be set, which implicate the model's structure:
+- Fibres: Number of muscle fibres of which the muscle should consist of
+- Resolution: Number of segments of each fiber (each fiber is basically a segmented line)
+- Visualization mode: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
 
 # Exporting a model
 The [3 separate models](#model-hierarchy) can be exported out of Blender.
@@ -48,15 +54,38 @@ If the export was successfull, the following pop-up should appear:
 
 ![](src/docs/GitHub/Blender-muscle-export-1.png)
 
-*If a dialog with different a message appears, please proceed to the [Troubleshooting](#troubleshooting) section*
+>*If a dialog with different a message appears, please proceed to the [Troubleshooting](#troubleshooting) section*
 
 and a new file, in the [working directory](#output-directory), should appear (with the same name).
 
 ![](src/docs/GitHub/Blender-muscle-export-2.png)
 
-The export format for the insertion/origin areas is **VTK**, for the volume **OBJ**. 
+The export format is **VTK** for the insertion/origin areas, **OBJ** for the volume . 
 
 # Decomposing a model
+If a user already has the model parts as files on the disk, the exporting process can be skipped.
+For the model decomposition, the files (representing each model(s) part(s)) **MUST BE** present in the [current working directory](#output-directory). After that, a user has **2** decomposition options:
+- Decompose specified muscle: To decompose only a **single** muscle, user **has to** specify a name of the muscle (**only the name**). This is partly why the naming conventions need to be complied with.
+- Decompose all muscles: The [current working folder](#output-directory) is searched through, extracting every unique muscle name and decomposing all muscles found.
 
+>**IMPORTANT!** Make sure you set the decomposition parameters **BEFORE** clicking on one of the decompose buttons. If you want to change the already decomposed model's parameters, you need to set new ones and press the decompose button again.
+
+After click either of the buttons, the model is imported automatically back into Blender, if the process finished successfully. Also, a decomposed model source file is created in the [current working folder](#output-directory)
+
+![](src/docs/GitHub/Blender-muscle-decomposition-1.png)
+
+![](src/docs/GitHub/Blender-muscle-decomposition-3.png)
+
+![](src/docs/GitHub/Blender-muscle-decomposition-2.png)
+
+>If not, the model is not imported into Blender and one of the possible error pop-ups appears. If that's the case, please proceed to the [Troubleshooting](#troubleshooting) section.
 
 # Troubleshooting
+During using the add-on, you might run into a few warnings/errors. Below, there's an available list suggesting a simple troubleshooting:
+- *No object(s) selected!*: You have tried to export a muscle (or its part), but you have not selected the model. Make sure the proper object is selected.
+  
+- *Wrong muscle name format! Model should...*: When exporting, make sure the model is named compliant to the [naming conventions](#model-hierarchy).
+
+- *File was not found! Please, check the filename and directory. (File: ...)*: This error mostly happens, when a user chose a [working directory](#output-directory), but the file is not present. These pop-ups should always contain a path to the file, which was not found, so make sure to check if the path is right and if the file is in the correct folder.
+
+- *No muscles to export found in the specified directory*:

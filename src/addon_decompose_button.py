@@ -90,7 +90,7 @@ class DecomposeButton(Operator):
             to_decompose.append(bpy.context.scene.muscle_name)
 
         if(len(to_decompose) == 0):
-            SimplePopup.showPopup(self, strings["Message_nothing_to_export"], "WARNING", "TRIA_UP")
+            SimplePopup.showPopup(self, strings["Message_nothing_to_decompose"], "WARNING", "TRIA_UP")
             return {"FINISHED"}
 
         for muscle_name in to_decompose:
