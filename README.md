@@ -28,7 +28,9 @@ A proper muscle model could have following hierarchy (in the scene):
 # Add-on's quick 
 The add-on's GUI is fairly simple:
 
-<p text-align="center"> <img align="center" src="./src/docs/GitHub/Blender-addon-gui-final.png"> </p> 
+<p align="center"> 
+<img src="./src/docs/GitHub/Blender-addon-gui-final.png"> 
+</p> 
 
 ## Output directory
 This parameter is used for selecting a work folder. 
