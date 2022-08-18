@@ -33,19 +33,19 @@ The add-on's GUI is fairly simple:
 <img src="./src/docs/GitHub/Blender-addon-gui-final.png"> 
 </p> 
 
-## Output directory
+### **Output directory**
 This parameter is used for selecting a work folder. 
 Export and decomposition functionallities are working with **this** directory.
 
-## Muscle name (decomposition)
+### **Muscle name (decomposition)**
 This parameter serves **only** for the singular decomposition process (Decompose specified muscle(s)).
 After pressing this button, the add-on searches for the [essential](#model-hierarchy) files in the current working directory (specified by [Output directory](#output-directory))
 
-## Decomposition parameters
+### **Decomposition parameters**
 For the decomposition process, following parameters can be set, which implicate the model's structure:
-- Fibres: Number of muscle fibres of which the muscle should consist of
-- Resolution: Number of segments of each fiber (each fiber is basically a segmented line)
-- Visualization mode: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
+- *Fibres*: Number of muscle fibres of which the muscle should consist of
+- *Resolution*: Number of segments of each fiber (each fiber is basically a segmented line)
+- *Visualization* mode**: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
 
 # Exporting a model
 The [3 separate models](#model-hierarchy) can be exported out of Blender.
