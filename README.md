@@ -61,7 +61,9 @@ If the export was successfull, the following pop-up should appear:
 
 and a new file, in the [working directory](#output-directory), should appear (with the same name).
 
-![](src/docs/GitHub/Blender-muscle-export-2.png)
+<p align="center"> 
+<img src="./src/docs/GitHub/Blender-muscle-export-2.png">
+</p>
 
 The export format is **VTK** for the insertion/origin areas, **OBJ** for the volume . 
 
@@ -79,7 +81,9 @@ After click either of the buttons, the model is imported automatically back into
 
 ![](src/docs/GitHub/Blender-muscle-decomposition-3.png)
 
-![](src/docs/GitHub/Blender-muscle-decomposition-2.png)
+<p align="center"> 
+<img src="./src/docs/GitHub/Blender-muscle-decomposition-2.png"> 
+</p> 
 
 >If not, the model is not imported into Blender and one of the possible error pop-ups appears. If that's the case, please proceed to the [Troubleshooting](#troubleshooting) section.
 
