@@ -97,7 +97,9 @@ During using the add-on, you might run into a few warnings/errors. Below, there'
 
 - *No muscles to decompose found in the specified directory*: [Current working directory](#output-directory) is most likely empty. Make sure, you're in the right tdirectory. If it is not empty, make sure you're following the [naming conventions](#model-hierarchy)
 
-- *MuscleDecomposition executable has not been found ...*: For decomposition, there's an essential tool in the add-on's source files. Open your file explorer and navigate to your Blender's add-on's folder (default: %appdata%\Blender Foundation\Blender\<version>\scripts\addons\Myogenerator\_Exporter\Assets). In this folder, there should be a file named **MuscleDecompositionTest** (*.exe* for Windows platform). Most likely, it is missing. This issue should be easily fixable by reinstalling the add-on, or download the executable from the source files (Windows only build) and copy it into the mentioned folder.
+- *MuscleDecomposition executable has not been found ...*: For decomposition, there's an essential tool in the add-on's source files. Open your file explorer and navigate to your Blender's add-on's folder (default: *%appdata%\Blender Foundation\Blender\<version>\scripts\addons\Myogenerator\_Exporter\Assets*). 
+
+   In this folder, there should be a file named **MuscleDecompositionTest** (*.exe* for Windows platform). Most likely, it is missing. This issue should be easily fixable by reinstalling the add-on, or download the executable from the source files (Windows only build) and copy it into the mentioned folder.
 
   > If you're using Linux, you will need to head to [this link](https://gitlab.com/besoft/muscle-wrapping-2.0) and build a MuscleDecompositionTest executable for your concrete platform and distribution.
 
