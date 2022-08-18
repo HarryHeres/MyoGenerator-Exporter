@@ -20,8 +20,9 @@ The name of the models in the scene **MUST** follow a naming convention:
 - For the origin area: `<muscle_name><space>origin<space>boundary`
 
 A proper muscle model could have following hierarchy (in the scene):
-
-![](src/docs/GitHub/Blender-muscle-naming.png)
+<p align="center"> 
+<img src="./src/docs/GitHub/Blender-muscle-naming.png">
+</p>
 
 *The name of the muscle model in this case is mAMEM_new*
 
