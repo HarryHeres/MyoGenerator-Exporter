@@ -26,7 +26,7 @@ A proper muscle model could have following hierarchy (in the scene):
 
 *The name of the muscle model in this case is mAMEM_new*
 
-# Add-on's quick 
+# Add-on's quick overview
 The add-on's GUI is fairly simple:
 
 <p align="center"> 
@@ -45,7 +45,7 @@ After pressing this button, the add-on searches for the [essential](#model-hiera
 For the decomposition process, following parameters can be set, which implicate the model's structure:
 - *Fibres*: Number of muscle fibres of which the muscle should consist of
 - *Resolution*: Number of segments of each fiber (each fiber is basically a segmented line)
-- *Visualization* mode**: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
+- *Visualization mode*: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
 
 # Exporting a model
 The [3 separate models](#model-hierarchy) can be exported out of Blender.
