@@ -55,7 +55,7 @@ The number of models/parts to export is **not** limited.
 
 If the export was successfull, the following pop-up should appear:
 
-![](src/docs/GitHub/Blender-muscle-export-1.png)
+![](./docs/GitHub/Blender-muscle-export-1.png)
 
 >*If a dialog with different a message appears, please proceed to the [Troubleshooting](#troubleshooting) section*
 
@@ -77,9 +77,9 @@ For the model decomposition, the files (representing each model(s) part(s)) **MU
 
 After click either of the buttons, the model is imported automatically back into Blender, if the process finished successfully. Also, a decomposed model source file is created in the [current working folder](#output-directory)
 
-![](src/docs/GitHub/Blender-muscle-decomposition-1.png)
+![](./docs/GitHub/Blender-muscle-decomposition-1.png)
 
-![](src/docs/GitHub/Blender-muscle-decomposition-3.png)
+![](./docs/GitHub/Blender-muscle-decomposition-3.png)
 
 <p align="center"> 
 <img src="./docs/GitHub/Blender-muscle-decomposition-2.png"> 
