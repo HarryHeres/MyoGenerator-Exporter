@@ -68,7 +68,7 @@ and a new file, in the [working directory](#output-directory), should appear (wi
 <img src="./docs/GitHub/Blender-muscle-export-2.png">
 </p>
 
-The export format is **VTK** for the insertion/origin areas, **OBJ** for the volume . 
+The export format is **VTK** for the insertion/origin areas, **STL** for the volume. 
 
 # Decomposing a model
 If a user already has the model parts as files on the disk, the exporting process can be skipped.
