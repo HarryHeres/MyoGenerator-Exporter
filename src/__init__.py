@@ -91,9 +91,11 @@ def register_props():
 
     bpy.types.Scene.export_visualize = bpy.props.EnumProperty(
         name = "Visualization mode",
-        description = "Visualization mode: 0 = none, 1 = vizualize, 2 = debug",
-        items = [("0", "0", "0", 0), ("1", "1", "1", 1), ("2", "2", "2", 2)],
-        default = "0",
+        items = [("0", "None", "No visualization", 0), 
+                 ("1", "Visualize", "Standard visualization in a separate window", 1), 
+                 ("2", "Debug", "Visualization mainly for debugging purposes", 2) #TODO: Remove from production!
+                ],
+        default = 0,
     )
 
     _props.append(bpy.types.Scene.output_path)
