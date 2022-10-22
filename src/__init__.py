@@ -89,14 +89,11 @@ def register_props():
         soft_max = 100, 
     )
 
-    bpy.types.Scene.export_visualize = bpy.props.IntProperty(
+    bpy.types.Scene.export_visualize = bpy.props.EnumProperty(
         name = "Visualization mode",
-        default = 0,
         description = "Visualization mode: 0 = none, 1 = vizualize, 2 = debug",
-        subtype = "UNSIGNED",
-        min = 0,
-        max = 2,
-        step = 1,
+        items = [("0", "0", "0", 0), ("1", "1", "1", 1), ("2", "2", "2", 2)],
+        default = "0",
     )
 
     _props.append(bpy.types.Scene.output_path)

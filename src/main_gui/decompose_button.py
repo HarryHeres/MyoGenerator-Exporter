@@ -53,7 +53,7 @@ class DecomposeButton(Operator):
 
         output = os.path.join(dir, muscle_name + ExportButton.type_delimiter + "decomposed" + self.mdt_format)
 
-        mdt = "./assets/MuscleDecompositionTest" # Muscle decomposition executable
+        mdt = "../assets/MuscleDecompositionTest" # Muscle decomposition executable
         if(platform == "win32"):
             mdt += ".exe"
             
@@ -85,7 +85,7 @@ class DecomposeButton(Operator):
         to_decompose = [] # Muscle names to decompose
         dir = bpy.path.abspath(bpy.context.scene.output_path)
 
-        if(self.type == errors["DecomposeButton_type_all"]):
+        if(self.type == props["DecomposeButton_type_all"]):
             for entry in os.listdir(dir):
                 if(entry.endswith(ExportButton.export_format_origin_insertion) or entry.endswith(ExportButton.export_format_volume)):
                     name = entry.split(ExportButton.type_delimiter)[0]

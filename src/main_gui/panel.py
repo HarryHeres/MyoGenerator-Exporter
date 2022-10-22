@@ -60,8 +60,11 @@ class MainPanel(bpy.types.Panel):
 
         # Visualization mode
         box = layout.box()
+
         row = box.row()
-        row.prop(context.scene, "export_visualize", text="Visualization mode")
+        row.label(text="Visualization Mode")
+        row = box.row()
+        row.prop(context.scene, "export_visualize", text="")
 
         layout.separator()
 
