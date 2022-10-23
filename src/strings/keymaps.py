@@ -6,7 +6,7 @@ keymaps = {"Mirroring": [{
                 "space_type": "EMPTY",
                 "map_type": "KEYBOARD",
                 "menu_name": "Window",
-                "action" : "wm.call_menu",
+                "action" : "wm.call_panel",
                 "idname": MirrorMenu.bl_idname,
                 "type": "F5",
                 "ctrl": False,

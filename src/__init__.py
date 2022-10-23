@@ -2,7 +2,7 @@
 from .main_gui.panel import MainPanel
 from .main_gui.decompose_button import DecomposeButton
 from .main_gui.export_button import ExportButton
-from .mirroring.flip_button import FlipButton
+from .mirroring.flip_button import MirrorButton
 from .mirroring.mirror_menu import MirrorMenu
 from .strings.keymaps import keymaps
 
@@ -16,7 +16,7 @@ Add-on properties
 '''
 
 
-_classes = [MainPanel, DecomposeButton, ExportButton, FlipButton, MirrorMenu]
+_classes = [MainPanel, DecomposeButton, ExportButton, MirrorButton, MirrorMenu]
 '''
 Add-on classes
 '''
@@ -98,11 +98,27 @@ def register_props():
         default = 0,
     )
 
+    bpy.types.Scene.mirror_x = bpy.props.BoolProperty(
+        name = "Mirroring X-Axis",
+        default=False
+    )
+
+    bpy.types.Scene.mirror_y = bpy.props.BoolProperty(
+        name = "Mirroring Y-Axis",
+        default=False
+    )
+
+    bpy.types.Scene.mirror_z = bpy.props.BoolProperty(
+        name = "Mirroring Z-Axis",
+        default=False
+    )
+
     _props.append(bpy.types.Scene.output_path)
     _props.append(bpy.types.Scene.muscle_name)
     _props.append(bpy.types.Scene.export_fibres)
     _props.append(bpy.types.Scene.export_resolution)
     _props.append(bpy.types.Scene.export_visualize)
+    _props.append(bpy.types.Scene.mirror_x)
 
 def register_keymaps():
     global _keymaps_list
