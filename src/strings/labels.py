@@ -3,7 +3,6 @@ Strings as bl_labels of each element
 '''
 labels = {
     "MainPanel_bl_label" : "MyoGenerator Exporter",
-    "MirrorMenu_bl_label" : "Mirror menu",
     "ExportButton_bl_label" : "Export selected muscle(s)",
     "DecomposeButton_bl_label_specified" : "Decompose specified muscle",
     "DecomposeButton_bl_label_all" : "Decompose all muscles",

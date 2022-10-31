@@ -3,7 +3,6 @@ from .export_button import ExportButton
 from .decompose_button import DecomposeButton
 from ..strings.ids import ids
 from ..strings.labels import labels
-from ..strings.props import props
 
 # NOTE: Developing in VS CODE: Have to import the whole bpy library,
 # since the Blender addon development extension is a bit older and 

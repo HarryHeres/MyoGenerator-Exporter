@@ -2,9 +2,6 @@
 from .main_gui.panel import MainPanel
 from .main_gui.decompose_button import DecomposeButton
 from .main_gui.export_button import ExportButton
-from .mirroring.flip_button import MirrorButton
-from .mirroring.mirror_menu import MirrorMenu
-from .strings.keymaps import keymaps
 
 ### Blender libraries ###
 import bpy
@@ -15,19 +12,10 @@ _props = []
 Add-on properties
 '''
 
-
-_classes = [MainPanel, DecomposeButton, ExportButton, MirrorButton, MirrorMenu]
+_classes = [MainPanel, DecomposeButton, ExportButton]
 '''
 Add-on classes
 '''
-
-_keymaps_list = []
-
-# _modules = ["debugpy"]
-# '''
-# Add-on essential modules
-# '''
-
 
 bl_info = {
  "name": "MyoGenerator Exporter",
@@ -45,7 +33,6 @@ Add-on info in Edit -> Preferences -> Add-ons
 def register():
     register_classes()
     register_props()
-    register_keymaps()
 
 def register_classes():
     global _classes
@@ -93,24 +80,9 @@ def register_props():
         name = "Visualization mode",
         items = [("0", "None", "No visualization", 0), 
                  ("1", "Visualize", "Standard visualization in a separate window", 1), 
-                 ("2", "Debug", "Visualization mainly for debugging purposes", 2) #TODO: Remove from production!
+                 ("2", "Debug", "Visualization mainly for debugging purposes", 2)
                 ],
         default = 0,
-    )
-
-    bpy.types.Scene.mirror_x = bpy.props.BoolProperty(
-        name = "Mirroring X-Axis",
-        default=False
-    )
-
-    bpy.types.Scene.mirror_y = bpy.props.BoolProperty(
-        name = "Mirroring Y-Axis",
-        default=False
-    )
-
-    bpy.types.Scene.mirror_z = bpy.props.BoolProperty(
-        name = "Mirroring Z-Axis",
-        default=False
     )
 
     _props.append(bpy.types.Scene.output_path)
@@ -118,60 +90,6 @@ def register_props():
     _props.append(bpy.types.Scene.export_fibres)
     _props.append(bpy.types.Scene.export_resolution)
     _props.append(bpy.types.Scene.export_visualize)
-    _props.append(bpy.types.Scene.mirror_x)
-
-def register_keymaps():
-    global _keymaps_list
-
-    wm = bpy.context.window_manager
-    kc = wm.keyconfigs.addon
-
-    for keymap_group_name in keymaps:
-        keylist = keymaps[keymap_group_name]
-
-        for list_item in keylist:
-            menu_name = list_item.get("menu_name")
-            space_type = list_item.get("space_type", "EMPTY")
-            region_type = list_item.get("region_type", "WINDOW")
-
-            if list_item:
-                km = kc.keymaps.new(menu_name, space_type=space_type, region_type=region_type)
-
-                if km:
-                    action = list_item.get("action")
-                    idname = list_item.get("idname")
-                    type = list_item.get("type")
-                    value = list_item.get("value")
-
-                    shift = list_item.get("shift", False)
-                    ctrl = list_item.get("ctrl", False)
-                    alt = list_item.get("alt", False)
-                    oskey = list_item.get("oskey", False)
-
-                    kmi = km.keymap_items.new(action, type, value, shift=shift, ctrl=ctrl, alt=alt, oskey=oskey)
-
-                    if kmi:
-                        kmi.properties.name = idname
-                _keymaps_list.append(km)
-
-    # Mirroring keymap group 
-    # km = wm.keyconfigs.addon.keymaps.new("Window", space_type="EMPTY", region_type="WINDOW")
-
-    # # Particular key shortcuts
-    # kmi = km.keymap_items.new("wm.call_menu", type="F5", value="PRESS")
-    # kmi.properties.name = MirrorMenu.bl_idname
-    # _keymaps_list.append(km)
-
-
-def unregister_keymaps():
-    global _keymaps_list
-
-    wm = bpy.context.window_manager
-
-    for km in _keymaps_list:
-        for kmi in km.keymap_items:
-            km.keymap_items.remove(kmi)
-    _keymaps_list.clear()
 
 
 def unregister():
@@ -180,36 +98,6 @@ def unregister():
     
     for prop in _props:
         del prop
-
-    unregister_keymaps()
-
-
-# DEPRECATED
-# '''
-# Installing all dependent modules
-# '''
-# def install_modules():
-#     # try:
-#     #     # Version 2.92 and older
-#     #     python_path = bpy.app.binary_path_python
-#     # except AttributeError:
-#     #     # Version 2.93 and later
-#     #     python_path = sys.executable
-    
-#     for module in _modules:
-#     #     cmd = [
-#     #         os.path.abspath(python_path),
-#     #         "-m" 
-#     #         "pip",
-#     #         "install",
-#     #         module,
-#     #     ]
-#     #     result = subprocess.run(cmd, stdout=subprocess.PIPE)
-#     #     print(result.stdout.decode("utf-8"))
-#         result = pip.main(["install", module])
-#         if(result == 1):
-#             print("ERROR! Module \"" + module + "\" have not been found for this version of Python!")
-            
 
 
 if __name__ == "__main__":
