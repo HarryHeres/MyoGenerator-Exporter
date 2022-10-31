@@ -118,7 +118,6 @@ class DecomposeButton(Operator):
                 
 
             decomposed = os.path.join(dir, muscle_name + ExportButton.type_delimiter + "decomposed" + self.mdt_format) # Decomposed muscle
-            # converted = os.path.join(dir, muscle_name + ExportButton.type_delimiter + "converted" + self.import_format) - DEPRECATED
 
             # Import back to Blender
             try:
@@ -127,7 +126,7 @@ class DecomposeButton(Operator):
                 message = errors["Message_file_not_found"] + "(File: " + decomposed + ")"
                 SimplePopup.showPopup(self, message, "ERROR", "ERROR")
                 return {"CANCELLED"}
-                
+
         return {"FINISHED"}
    
 
