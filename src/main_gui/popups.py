@@ -28,6 +28,3 @@ class SimplePopup():
             self.layout.label(text = message)
 
         bpy.context.window_manager.popup_menu(draw, title = title, icon = icon)
-
-class MirrorWindow(bpy.types.Window):
-    bl_idname = ""
