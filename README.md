@@ -4,6 +4,9 @@ It's purpose is to be able to easily export **models of muscles** with their *or
 
 It is supported by the Myogenerator add-on version **1.0.0** and Blender versions **2.8X.X - 2.9X.X**
 
+DOI for the newest release citations: [![DOI](https://zenodo.org/badge/507097457.svg)](https://zenodo.org/badge/latestdoi/507097457)
+
+
 # Installation
 To install this add-on, download the intended released version [HERE](https://github.com/HarryHeres/MyoGenerator-Exporter/releases) and proceed as follows: [How to install](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html).
 After a successfull installation, the add-on should be present on the right vertical add-on toolbar (showed by pressing the **N** key).
@@ -21,7 +24,7 @@ The name of the models in the scene **MUST** follow a naming convention:
 
 A proper muscle model could have following hierarchy (in the scene):
 <p align="center"> 
-<img src="./src/docs/GitHub/Blender-muscle-naming.png">
+<img src="./docs/GitHub/Blender-muscle-naming.png">
 </p>
 
 *The name of the muscle model in this case is mAMEM_new*
@@ -30,7 +33,7 @@ A proper muscle model could have following hierarchy (in the scene):
 The add-on's GUI is fairly simple:
 
 <p align="center"> 
-<img src="./src/docs/GitHub/Blender-addon-gui-final.png"> 
+<img src="./docs/GitHub/Blender-addon-gui-final.png"> 
 </p> 
 
 ### **Output directory**
@@ -55,17 +58,17 @@ The number of models/parts to export is **not** limited.
 
 If the export was successfull, the following pop-up should appear:
 
-![](src/docs/GitHub/Blender-muscle-export-1.png)
+![](./docs/GitHub/Blender-muscle-export-1.png)
 
 >*If a dialog with different a message appears, please proceed to the [Troubleshooting](#troubleshooting) section*
 
 and a new file, in the [working directory](#output-directory), should appear (with the same name).
 
 <p align="center"> 
-<img src="./src/docs/GitHub/Blender-muscle-export-2.png">
+<img src="./docs/GitHub/Blender-muscle-export-2.png">
 </p>
 
-The export format is **VTK** for the insertion/origin areas, **OBJ** for the volume . 
+The export format is **VTK** for the insertion/origin areas, **STL** for the volume. 
 
 # Decomposing a model
 If a user already has the model parts as files on the disk, the exporting process can be skipped.
@@ -77,12 +80,12 @@ For the model decomposition, the files (representing each model(s) part(s)) **MU
 
 After click either of the buttons, the model is imported automatically back into Blender, if the process finished successfully. Also, a decomposed model source file is created in the [current working folder](#output-directory)
 
-![](src/docs/GitHub/Blender-muscle-decomposition-1.png)
+![](./docs/GitHub/Blender-muscle-decomposition-1.png)
 
-![](src/docs/GitHub/Blender-muscle-decomposition-3.png)
+![](./docs/GitHub/Blender-muscle-decomposition-3.png)
 
 <p align="center"> 
-<img src="./src/docs/GitHub/Blender-muscle-decomposition-2.png"> 
+<img src="./docs/GitHub/Blender-muscle-decomposition-2.png"> 
 </p> 
 
 >If not, the model is not imported into Blender and one of the possible error pop-ups appears. If that's the case, please proceed to the [Troubleshooting](#troubleshooting) section.
