@@ -5,7 +5,7 @@ It's purpose is to be able to easily export **models of muscles** with their *or
 It is supported by the Myogenerator add-on version **1.0.0** and Blender versions **2.8X.X - 2.9X.X**
 
 # Installation
-To install this add-on, download the intended released version and proceed as follows: [How to install](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html).
+To install this add-on, download the intended released version [HERE](https://github.com/HarryHeres/MyoGenerator-Exporter/releases) and proceed as follows: [How to install](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html).
 After a successfull installation, the add-on should be present on the right vertical add-on toolbar (showed by pressing the **N** key).
 
 # Model hierarchy
