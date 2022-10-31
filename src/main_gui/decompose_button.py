@@ -118,7 +118,6 @@ class DecomposeButton(Operator):
                 
 
             decomposed = os.path.join(dir, muscle_name + ExportButton.type_delimiter + "decomposed" + self.mdt_format) # Decomposed muscle
-            # converted = os.path.join(dir, muscle_name + ExportButton.type_delimiter + "converted" + self.import_format) - DEPRECATED
 
             # Import back to Blender
             try:
@@ -128,18 +127,6 @@ class DecomposeButton(Operator):
                 SimplePopup.showPopup(self, message, "ERROR", "ERROR")
                 return {"CANCELLED"}
 
-            # NOTE: Apply all linear transformations to match the volume model - DEPRECATED
-            # try:
-            #     volume = bpy.data.objects[muscle_name + ExportButton.type_delimiter + "volume"]
-            #     imported = bpy.data.objects[muscle_name + ExportButton.type_delimiter + "converted"]
-
-            #     imported.location = volume.location
-            #     imported.rotation_euler = volume.rotation_euler
-            #     imported.scale = volume.scale
-            # except KeyError:
-            #     SimplePopup.showPopup(self, errors["Message_muscle_not_found"], "WARNING", "TRIA_UP")
-
-        # SimplePopup.showPopup(self, errors["Message_decomposing_done"], "Success", "INFO")    
         return {"FINISHED"}
    
 
