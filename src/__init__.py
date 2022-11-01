@@ -1,4 +1,7 @@
 ### General libraries ###
+from .main_gui.panel import MainPanel
+from .main_gui.decompose_button import DecomposeButton
+from .main_gui.export_button import ExportButton
 
 ### Blender libraries ###
 import bpy
@@ -9,15 +12,18 @@ _props = []
 Add-on properties
 '''
 
-_classes = []
+_classes = [MainPanel, DecomposeButton, ExportButton]
+'''
+Add-on classes
+'''
 
 bl_info = {
  "name": "MyoGenerator Exporter",
  "description": "Addon used for exporting muscle models created by the Myogenerator, decomposing them into muscle fibers using 3rd party software and then importing them back to Blender",
- "author": "Jan Heres",
- "blender": (2, 91, 0),
- "version": (0, 0, 1),
- "warning": "Only officially supported for versions 2.93.X of Blender!",
+ "author": "Jan Hereš (www.janheres.eu)",
+ "blender": (2, 93, 0),
+ "version": (1, 0, 1),
+ "warning": "Only officially supported for versions 2.91.X - 2.93.X of Blender!",
  "category": "Export",
 }
 '''
@@ -25,20 +31,17 @@ Add-on info in Edit -> Preferences -> Add-ons
 '''
 
 def register():
+    register_classes()
+    register_props()
+
+def register_classes():
     global _classes
-
-    # install_modules() # Making sure the essential modules are installed - NOT NEEDED IN THIS VERSION
-
-    # NOTE: Have to import the add-on's classes AFTER the essential modules are installed
-    from .addon_panel import MainPanel
-    from .addon_decompose_button import DecomposeButton
-    from .addon_export_button import ExportButton
-    
-    _classes = [MainPanel, DecomposeButton, ExportButton]
 
     for cls in _classes:
         register_class(cls)
 
+
+def register_props():
     bpy.types.Scene.output_path = bpy.props.StringProperty(
         name = "Output path (folder)",
         default = "",
@@ -73,14 +76,13 @@ def register():
         soft_max = 100, 
     )
 
-    bpy.types.Scene.export_visualize = bpy.props.IntProperty(
+    bpy.types.Scene.export_visualize = bpy.props.EnumProperty(
         name = "Visualization mode",
+        items = [("0", "None", "No visualization", 0), 
+                 ("1", "Visualize", "Standard visualization in a separate window", 1), 
+                 ("2", "Debug", "Visualization mainly for debugging purposes", 2)
+                ],
         default = 0,
-        description = "Visualization mode: 0 = none, 1 = vizualize, 2 = debug",
-        subtype = "UNSIGNED",
-        min = 0,
-        max = 2,
-        step = 1,
     )
 
     _props.append(bpy.types.Scene.output_path)
@@ -96,6 +98,7 @@ def unregister():
     
     for prop in _props:
         del prop
+
 
 if __name__ == "__main__":
     register()
