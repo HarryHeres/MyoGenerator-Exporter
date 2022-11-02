@@ -109,3 +109,8 @@ During using the add-on, you might run into a few warnings/errors. Below, there'
 - *Decomposition has been aborted due to the following reason:*: Something went wrong during the decomposition process. Try to decompose a muscle with **visualization mode = 2**, screenshot the console output and open an issue on the [GitHub repository](https://github.com/HarryHeres/MyoGenerator-Exporter).
 
 If you have run into other errors, please feel free to open an issue on the official [GitHub repository](https://github.com/HarryHeres/MyoGenerator-Exporter) :-).
+
+# Contributors
+**Hearthwarming thanks to everyone that has contributed to this project!**
+- @HarryHeres - Main developer
+- @evaherbst - Initial idea, contributor
