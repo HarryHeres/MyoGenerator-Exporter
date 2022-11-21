@@ -46,7 +46,7 @@ class MainPanel(bpy.types.Panel):
         # Muscle decomposition parameters
         box = layout.box()
         row = box.row()
-        row.label(text=labels["Label_parameters_text"])
+        row.label(text=labels["Label_parameters_mdt"])
 
         # Number of fibres
         row = box.row()
@@ -64,6 +64,18 @@ class MainPanel(bpy.types.Panel):
         row.label(text="Visualization Mode")
         row = box.row()
         row.prop(context.scene, "export_visualize", text="")
+
+        layout.separator()
+
+        # Check-box options
+        box = layout.box()
+        row = box.row()
+        row.label(text=labels["Label_object_operations"])
+        row = box.row()
+        row.prop(context.scene, "export_reorder_vertices", text="Reorder boundary vertices")
+
+        row = box.row()
+        row.prop(context.scene, "export_triangulate_mesh", text="Triangulate volume mesh")
 
         layout.separator()
 

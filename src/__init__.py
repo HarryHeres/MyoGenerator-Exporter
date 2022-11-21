@@ -85,11 +85,25 @@ def register_props():
         default = 0,
     )
 
+    bpy.types.Scene.export_reorder_vertices = bpy.props.BoolProperty(
+        name = "Reorder vertices",
+        description="(RECOMMENDED) Reorder vertices into a sequential numbering order. It is recommended for proper decomposition results.",
+        default = True,
+    )
+
+    bpy.types.Scene.export_triangulate_mesh = bpy.props.BoolProperty(
+        name = "Triangulate volume mesh from quadrilateral mesh",
+        description="Convert quadrilateral volume meshes to triangular for proper decomposition results.",
+        default = True,
+    )
+
     _props.append(bpy.types.Scene.output_path)
     _props.append(bpy.types.Scene.muscle_name)
     _props.append(bpy.types.Scene.export_fibres)
     _props.append(bpy.types.Scene.export_resolution)
     _props.append(bpy.types.Scene.export_visualize)
+    _props.append(bpy.types.Scene.export_reorder_vertices)
+    _props.append(bpy.types.Scene.export_triangulate_mesh)
 
 
 def unregister():
