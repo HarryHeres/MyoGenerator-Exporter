@@ -22,7 +22,7 @@ bl_info = {
  "description": "Addon used for exporting muscle models created by the Myogenerator, decomposing them into muscle fibers using 3rd party software and then importing them back to Blender",
  "author": "Jan Hereš (www.janheres.eu)",
  "blender": (2, 93, 0),
- "version": (1, 0, 1),
+ "version": (1, 1, 0),
  "warning": "Only officially supported for versions 2.91.X - 2.93.X of Blender!",
  "category": "Export",
 }
