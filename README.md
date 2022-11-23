@@ -2,7 +2,7 @@
 A Blender add-on for use in combination with the [MyoGenerator](https://github.com/evaherbst/MyoGenerator) add-on developed by *Eva C. Herbst*.
 It's purpose is to be able to easily export **models of muscles** with their *origin* and *insertion* areas out of Blender and decompose them into **a set of muscle fibres** - a more realistic representation.
 
-It is supported by the Myogenerator add-on version **1.0.0** and Blender versions **2.8X.X - 2.9X.X**
+It is supported by the Myogenerator add-on and Blender versions **2.8X.X - 2.9X.X**
 
 DOI for the newest release citations: [![DOI](https://zenodo.org/badge/507097457.svg)](https://zenodo.org/badge/latestdoi/507097457)
 
@@ -48,7 +48,16 @@ After pressing this button, the add-on searches for the [essential](#model-hiera
 For the decomposition process, following parameters can be set, which implicate the model's structure:
 - *Fibres*: Number of muscle fibres of which the muscle should consist of
 - *Resolution*: Number of segments of each fiber (each fiber is basically a segmented line)
-- *Visualization mode*: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
+- *Visualization mode*: 
+  - *None* - No visualization
+  - *Visualize* - Standard visualization in a separate window
+  - *Debug* For development purposes
+
+### **Optional parameters**
+These parameters are not strictly required, though some of them are fairly recommended.
+- *Vertices reordering* (**RECOMMENDED**) - Reorder vertices into a sequential numbering order. It is strongly recommended for proper decomposition results.
+  
+- *Mesh triangulation* - Convert quadrilateral volume meshes to a triangular one.
 
 # Exporting a model
 The [3 separate models](#model-hierarchy) can be exported out of Blender.
@@ -109,8 +118,3 @@ During using the add-on, you might run into a few warnings/errors. Below, there'
 - *Decomposition has been aborted due to the following reason:*: Something went wrong during the decomposition process. Try to decompose a muscle with **visualization mode = 2**, screenshot the console output and open an issue on the [GitHub repository](https://github.com/HarryHeres/MyoGenerator-Exporter).
 
 If you have run into other errors, please feel free to open an issue on the official [GitHub repository](https://github.com/HarryHeres/MyoGenerator-Exporter) :-).
-
-# Contributors
-**Hearthwarming thanks to everyone that has contributed to this project!**
-- @HarryHeres - Main developer
-- @evaherbst - Initial idea, contributor
