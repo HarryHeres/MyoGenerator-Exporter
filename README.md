@@ -2,7 +2,7 @@
 A Blender add-on for use in combination with the [MyoGenerator](https://github.com/evaherbst/MyoGenerator) add-on developed by *Eva C. Herbst*.
 It's purpose is to be able to easily export **models of muscles** with their *origin* and *insertion* areas out of Blender and decompose them into **a set of muscle fibres** - a more realistic representation.
 
-It is supported by the Myogenerator add-on version **1.0.0** and Blender versions **2.8X.X - 2.9X.X**
+It is supported by the Myogenerator add-on and Blender versions **2.8X.X - 2.9X.X**
 
 DOI for the newest release citations: [![DOI](https://zenodo.org/badge/507097457.svg)](https://zenodo.org/badge/latestdoi/507097457)
 
