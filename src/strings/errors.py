@@ -1,6 +1,7 @@
 errors = {
     "Message_nothing_selected" : "No object(s) selected!",
     "Message_exporting_finished" : "Exporting finished!",
+    "Message_exporting_mesh_error" : "Mesh has not beed converted => Exporting cancelled. Please, proceed to the Troubleshooting section on GitHub repository",
     "Message_wrong_name_format" : "Wrong muscle name format! Model should be named using following pattern: <muscle_name><space><origin|volume|insertion><space><boundary>!",
     "Message_decomposing_done" : "Decomposing done!",
     "Message_muscle_not_found" :"Corresponding muscle not found. Please, adjust the model manually",

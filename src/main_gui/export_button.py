@@ -6,6 +6,7 @@ from ..strings.ids import ids
 from ..strings.descriptions import descriptions
 from ..strings.errors import errors
 from ..strings.labels import labels
+from ..object.operations import triangulate_volume, reorder_coords
 
 ### Blender libraries ###
 
@@ -59,7 +60,6 @@ class ExportButton(Operator):
         SimplePopup.showPopup(self, errors["Message_exporting_finished"], "Export")
             
         return {'FINISHED'}
-    
 
     def export_volume(self, obj) -> None:
         # For debugging purposes
@@ -73,6 +73,10 @@ class ExportButton(Operator):
 
         # Apply all object transforms before exporting
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+
+        # Triangulate volume if it's selected
+        if(bpy.context.scene.export_triangulate_mesh == True):
+            triangulate_volume(obj)        
 
         # For debugging purposes
         print_format = "[" + obj.name + "]: " 
@@ -94,7 +98,6 @@ class ExportButton(Operator):
                                 batch_mode='OFF', 
                                 axis_forward='Y', 
                                 axis_up='Z')
-
 
     def export_origin_insertion(self, obj, type) -> None:
         # For debugging purposes
@@ -119,16 +122,25 @@ class ExportButton(Operator):
         # Switch to edit mode (-> mesh layout)
         bpy.ops.object.mode_set(mode = 'EDIT')
 
-        # bpy.ops.object.select_all(action = 'SELECT') 
-
         bpy.context.tool_settings.mesh_select_mode = (True, False, False) # Vertex selection mode
         bpy.ops.mesh.select_all(action = 'SELECT') # Select all vertices
 
+        bm = None
+        if(bpy.context.scene.export_reorder_vertices == True): # Reorder boundary vertices into a sequentially numbered order
+            bm = reorder_coords(obj) 
+        else:
+            bm = bmesh.from_edit_mesh(bpy.context.edit_object.data)
+
+        # Fail-safe test
+        if(bm == None):
+            SimplePopup.showPopup(self, errors["Message_exporting_mesh_error"], "ERROR", "ERROR")
+            return
+
         # Get the active mesh
-        bm = bmesh.from_edit_mesh(bpy.context.edit_object.data)
         bm.faces.active = None
         pointsList = []
 
+        # Prepare data for the export
         for v in bm.verts:
             if v.select:
                 # print(v.co)

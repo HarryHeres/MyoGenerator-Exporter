@@ -22,7 +22,7 @@ bl_info = {
  "description": "Addon used for exporting muscle models created by the Myogenerator, decomposing them into muscle fibers using 3rd party software and then importing them back to Blender",
  "author": "Jan Hereš (www.janheres.eu)",
  "blender": (2, 93, 0),
- "version": (1, 0, 1),
+ "version": (1, 1, 0),
  "warning": "Only officially supported for versions 2.91.X - 2.93.X of Blender!",
  "category": "Export",
 }
@@ -85,11 +85,25 @@ def register_props():
         default = 0,
     )
 
+    bpy.types.Scene.export_reorder_vertices = bpy.props.BoolProperty(
+        name = "Reorder vertices",
+        description="(RECOMMENDED) Reorder vertices into a sequential numbering order. It is strongly recommended for proper decomposition results.",
+        default = True,
+    )
+
+    bpy.types.Scene.export_triangulate_mesh = bpy.props.BoolProperty(
+        name = "(Optional) Triangulate volume mesh from quadrilateral mesh",
+        description="Convert quadrilateral volume meshes to a triangular one.",
+        default = False,
+    )
+
     _props.append(bpy.types.Scene.output_path)
     _props.append(bpy.types.Scene.muscle_name)
     _props.append(bpy.types.Scene.export_fibres)
     _props.append(bpy.types.Scene.export_resolution)
     _props.append(bpy.types.Scene.export_visualize)
+    _props.append(bpy.types.Scene.export_reorder_vertices)
+    _props.append(bpy.types.Scene.export_triangulate_mesh)
 
 
 def unregister():
