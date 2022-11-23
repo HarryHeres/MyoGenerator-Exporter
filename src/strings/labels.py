@@ -9,5 +9,7 @@ labels = {
     "ProgressPopup_bl_label" : "Exporting successful!",
     "Label_output_path_text" : "Output directory",
     "Label_output_filename_text" : "Muscle name (decomposition)",
-    "Label_parameters_text" : "Muscle decomposition parameters",
+    "Label_parameters_mdt" : "Muscle decomposition parameters",
+    "Label_parameters_vis_mode" : "Visualization Mode",
+    "Label_object_operations" : "Additional operations"
 }
