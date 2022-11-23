@@ -50,6 +50,12 @@ For the decomposition process, following parameters can be set, which implicate 
 - *Resolution*: Number of segments of each fiber (each fiber is basically a segmented line)
 - *Visualization mode*: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
 
+### **Optional parameters**
+These parameters are not strictly required, though some of them are fairly recommended.
+- *Vertices reordering* (**RECOMMENDED**) - Reorder vertices into a sequential numbering order. It is strongly recommended for proper decomposition results.
+  
+- *Mesh triangulation* - Convert quadrilateral volume meshes to a triangular one.
+
 # Exporting a model
 The [3 separate models](#model-hierarchy) can be exported out of Blender.
 To export them, user has to select which of the model should be exported. (*in the object hierarchy in the upper right corner; use CTRL + mouse click to select multiple parts*)
