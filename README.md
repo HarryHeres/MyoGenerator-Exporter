@@ -48,7 +48,10 @@ After pressing this button, the add-on searches for the [essential](#model-hiera
 For the decomposition process, following parameters can be set, which implicate the model's structure:
 - *Fibres*: Number of muscle fibres of which the muscle should consist of
 - *Resolution*: Number of segments of each fiber (each fiber is basically a segmented line)
-- *Visualization mode*: 0 - no visualization, 1 - visualization of the decomposition process, 2 - Debug (for development purposes)
+- *Visualization mode*: 
+  - *None* - No visualization
+  - *Visualize* - Standard visualization in a separate window
+  - *Debug* For development purposes
 
 ### **Optional parameters**
 These parameters are not strictly required, though some of them are fairly recommended.
