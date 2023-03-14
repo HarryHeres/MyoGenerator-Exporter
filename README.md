@@ -8,7 +8,7 @@ DOI for the newest release citations: [![DOI](https://zenodo.org/badge/507097457
 
 <br>
 
-## A quick Thank you!
+## A quick "Thank you"!
 This add-on as basically a wrapper for an already existing muscle decompositor, which is a part of a bigger project called **Muscle Wrapping 2.0** (if interested, please refer to [HERE](https://doi.org/10.1007/s10439-020-02490-4) and [HERE](https://doi.org/10.1111/cgf.12354)). I'd like to wholeheartedly thank all of it's creators (mainly Josef Kohout and Luca Modense). **Thank you!**
 
 # Installation
