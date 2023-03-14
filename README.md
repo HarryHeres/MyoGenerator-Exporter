@@ -6,6 +6,8 @@ It is supported by the Myogenerator add-on and Blender versions **2.8X.X - 2.9X.
 
 DOI for the newest release citations: [![DOI](https://zenodo.org/badge/507097457.svg)](https://zenodo.org/badge/latestdoi/507097457)
 
+## Thank you!
+This add-on as basically a wrapper for an already existing muscle decompositor, which is a part of a bigger project called **Muscle Wrapping 2.0** (if interested, please refer to [HERE](https://doi.org/10.1007/s10439-020-02490-4) and [HERE](https://doi.org/10.1111/cgf.12354)). I'd like to wholeheartedly thank all of it's creators (mainly Josef Kohout and Luca Modense).
 
 # Installation
 To install this add-on, download the intended released version [HERE](https://github.com/HarryHeres/MyoGenerator-Exporter/releases) and proceed as follows: [How to install](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html).
